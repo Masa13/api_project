@@ -18,9 +18,9 @@ def t(tag="search"):
     result = request.read()
     r = json.loads(result)
     moviePosters = []
-    for poster in r['response']:
+    for poster in r["response"]:
         try:
-            moviePosters.append(poster['image_url'])
+            moviePosters.append(poster["image_url"])
         except:
             pass
 
