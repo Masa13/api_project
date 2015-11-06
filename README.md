@@ -1,5 +1,5 @@
 # api_project
 
-Group members: \n
-  Shawn Li \n
-  Masahero Masuda
+#Group members:
+  #Shawn Li
+  #Masahero Masuda
