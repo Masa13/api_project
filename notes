@@ -1,11 +1,16 @@
 Ideas
   Anime ratings -- Google images
-  Anime ratings -- soundcloud songs
-
+  Anime popularity (members) -- soundcloud songs
+  youtube videos -- tumblr images
+  
 
 Links
   myAnimeList
     http://myanimelist.net/modules.php?go=api
   Sound cloud
     https://developers.soundcloud.com/docs/api/guide#authentication
+  Manga Eden
+    http://www.programmableweb.com/api/manga-eden
+  YouTube
+    https://developers.google.com/youtube/
     
