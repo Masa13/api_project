@@ -3,8 +3,8 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-search = 'banana'
-searchEncoded = urllib.quote(search)
+#search = 'banana'
+#searchEncoded = urllib.quote(search)
 
 @app.route("/")
 @app.route("/home")
@@ -14,8 +14,9 @@ def home():
 
 @app.route("/t")
 @app.route("/t/<tag>")
-def t(tag=searchEncoded):
-    rawData = urllib.urlopen('https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q='+tag).read()
+def t(tag="america"):#searchEncoded):
+    searchEncoded = urllib.quote(tag)
+    rawData = urllib.urlopen('https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q='+searchEncoded).read()
     jsonData = json.loads(rawData)
     searchResults = jsonData['responseData']['results']
     images = []
