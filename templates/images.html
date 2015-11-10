@@ -4,12 +4,12 @@
 {% block title %}
 <title>API PROJECT | Image search results</title>
 {% endblock %}
-{% block body %}
 
-<body>
+{% block body %}
+<center>
    {% for url in urls %}
 	<img src = "{{ url }}" / width = 720px>
    {% endfor %}
-</body>
+</center>
 
 {% endblock %}
