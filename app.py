@@ -1,31 +1,30 @@
-import urllib2,json
+import urllib, json
 from flask import Flask, render_template
 
 app = Flask(__name__)
+
+search = 'banana'
+searchEncoded = urllib.quote(search)
 
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template("home.html")
 
-#@app.route("/anime
 
 @app.route("/t")
 @app.route("/t/<tag>")
-def t(tag="search"):
-    url="http://myanimelist.net/api/anime/search.xml?tag=%s"
-    request = urllib2.urlopen(url)
-    result = request.read()
-    r = json.loads(result)
-    moviePosters = []
-    for poster in r["response"]:
+def t(tag=searchEncoded):
+    rawData = urllib.urlopen('https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q='+tag).read()
+    jsonData = json.loads(rawData)
+    searchResults = jsonData['responseData']['results']
+    images = []
+    for results in searchResults:
         try:
-            moviePosters.append(poster["image_url"])
+            images.append(results['url'])
         except:
             pass
-
-    return render_template("moviePosters.html", urls=moviePosters)
-
+    return render_template("images.html",urls=images);
 
 if __name__ == "__main__":
     app.debug = True
