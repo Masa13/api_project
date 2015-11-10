@@ -30,7 +30,7 @@ def t(tag=searchEncoded):
 @app.route("/browse/<tag>")
 def browse(tag="America"):
     key="AIzaSyCMMiZuxl1R8QcMb0SZyvlzyCxNTJO0Zl4"
-    uri="
+    uri=""
 
 if __name__ == "__main__":
     app.debug = True
