@@ -1,16 +1,8 @@
 <!DOCTYPE html>
-{% extends "base.html" %}
-
-{% block title %}
-<title>API PROJECT | Image search results</title>
-{% endblock %}
-
-{% block body %}
-
-<center>
+<html>
+ <body>
    {% for url in urls %}
 	<img src = "{{ url }}" / width = 720px>
-	<br>
    {% endfor %}
-</center>
-{% endblock %}
+ </body>
+</html>
