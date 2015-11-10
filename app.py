@@ -15,16 +15,16 @@ def home():
 @app.route("/t")
 @app.route("/t/<tag>")
 def t(tag=searchEncoded):
-    rawData = urllib.urlopen('https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q='+tag).read()
-    jsonData = json.loads(rawData)
-    searchResults = jsonData['responseData']['results']
+    rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
+    jsonDATA = json.loads(rawData)
+    searchResults = jsonDATA["responseData"]["results"]
     images = []
-    for results in searchResults:
+    for result in searchResults:
         try:
-            images.append(results['url'])
+            images.append(result['url'])
         except:
             pass
-    return render_template("images.html",urls=images);
+    return render_template("images.html",urls=images)
 
 if __name__ == "__main__":
     app.debug = True
