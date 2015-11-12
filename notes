@@ -1,16 +1,7 @@
-Ideas
-  Anime ratings -- Google images
-  Anime popularity (members) -- soundcloud songs
+Ideas:
   youtube videos -- tumblr images
   
-
-Links
-  myAnimeList
-    http://myanimelist.net/modules.php?go=api
-  Sound cloud
-    https://developers.soundcloud.com/docs/api/guide#authentication
-  Manga Eden
-    http://www.programmableweb.com/api/manga-eden
+  
   YouTube
     https://developers.google.com/youtube/
     
@@ -19,3 +10,6 @@ API tutorial
 
 API KEY FOR GOOGLE APPS DEV
   AIzaSyCMMiZuxl1R8QcMb0SZyvlzyCxNTJO0Zl4
+
+YOUTUBE API TUTORIAL:
+  https://developers.google.com/youtube/v3/getting-started
