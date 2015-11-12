@@ -4,8 +4,8 @@
   * Create a site that takes the tags from a youtube video and searches the tags on google images which then gives you an album.
 
 ##Group members:
-  - *Shawn Li*
-  - *Masahero Masuda*
+  - *[Shawn Li]("github.com/TyranitarShawn")
+  - *[Masahero Masuda]("github.com/Masa13")
 
 ##To-do list:
   - Make Youtube API accept and respond to our request
