@@ -1,4 +1,7 @@
-# api_project
+# api_project: YTGIS
+
+##Goal:
+  * Create a site that takes the tags from a youtube video and searches the tags on google images which then gives you an album.
 
 ##Group members:
   - *Shawn Li*
