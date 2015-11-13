@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+  .ayylmao{
+    display: none;
+  }
+</style>
 <head>
 
     <meta charset="utf-8">
@@ -45,7 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Home</a>
+                <a class="navbar-brand" href="/">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -54,7 +58,8 @@
                         <a href="/t">Search</a>
                     </li>
                     <li>
-                        <a href="#">Donate</a>
+                      <a href="#donation" id="donation">Donate</a>
+		      <img src="../static/img/money.gif" class="ayylmao" id="money">
                     </li>
                     <li>
                         <a href="#">About</a>
@@ -91,7 +96,20 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../static/js/bootstrap.min.js"></script>
-
+    <script>
+      $.fn.center = function () {
+      this.css("position","absolute");
+      this.css("top",420);
+      this.css("left",240);
+      return this;
+      }
+      $("#donation").on("click", function(){
+      $("#money").fadeIn().center()
+      setTimeout(function(){
+      $("#money").fadeOut()
+      }, 7500);
+      });
+    </script>
 </body>
 
 </html>
