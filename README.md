@@ -1,14 +1,18 @@
-# api_project: YTGIS
+# api_project: LAD (little alchemy demo)
 
 ##Goal:
-  * Create a site that takes the tags from a youtube video and searches the tags on google images which then gives you an album.
+  * Create a "little alchemy" demo that requires the user to guess what object is formed by combining two other objects. 
 
 ##Group members:
   - *[Shawn Li](https://github.com/TyranitarShawn)*
   - *[Masahero Masuda](https://github.com/Masa13)*
 
 ##To-do list:
-  - Make Youtube API accept and respond to our request
-  - Connect Youtube API to Google API
-  - Make Donate button do the stuff
-  - Add to Home and About page
+  - Add Tumblr API (Masahero)
+  - Add Alchemy dictionary (Masahero)
+  - Adjust middle to get requests and process them (Shawn can't do until above two are completed)
+  - Adjust front end
+  - Add to Home and About page (anyone)
+
+##Odd bugs:
+ - "No json object could be decoded" occurs when working on linux computers but not windows computers.
