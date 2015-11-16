@@ -17,28 +17,41 @@ def home():
 @app.route("/quiz/", methods=["GET","POST"])
 def quiz():
     #List of words that the user will have to guess
-    word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff','mom','dad','sister','brother','soft','scream','nightmare','america','china','france','england','pokemon','ash','power','death','life','spikes','hairy','pain','exploration']
-    search = random.choice(word_list)
-    answer=search
-    searchEncoded = urllib.quote(search)
-    tag=searchEncoded
-    rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
-    jsonDATA = json.loads(rawData)
-    searchResults = jsonDATA["responseData"]["results"]
-    images = []
-    for result in searchResults:
-        try:
-            images.append(result['url'])
-        except:
-            pass
+    #word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff','mom','dad','sister','brother','soft','scream','nightmare','america','china','france','england','pokemon','ash','power','death','life','spikes','hairy','pain','exploration']
+    #search = random.choice(word_list)
+    #answer=search
+    #searchEncoded = urllib.quote(search)
+    #tag=searchEncoded
+    #rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
+    #jsonDATA = json.loads(rawData)
+    #searchResults = jsonDATA["responseData"]["results"]
+    #images = []
+    #for result in searchResults:
+    #    try:
+    #        images.append(result['url'])
+    #    except:
+    #        pass
     if request.method == "GET":
+        word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff','mom','dad','sister','brother','soft','scream','nightmare','america','china','france','england','pokemon','ash','power','death','life','spikes','hairy','pain','exploration']
+        search = random.choice(word_list)
+        searchEncoded = urllib.quote(search)
+        tag=searchEncoded
+        rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
+        jsonDATA = json.loads(rawData)
+        searchResults = jsonDATA["responseData"]["results"]
+        images = []
+        for result in searchResults:
+            try:
+                images.append(result['url'])
+            except:
+                pass
         return render_template("quiz.html",urls=images,result=search)
     else:
         guess=request.form['guess']
         if guess==search:
             return render_template("correct.html")
         else:
-            return render_template("incorrect.html",answer=answer)
+            return render_template("incorrect.html",answer=search)
 
 @app.route("/browse", methods=["GET", "POST"])
 @app.route("/browse/", methods=["GET", "POST"])
