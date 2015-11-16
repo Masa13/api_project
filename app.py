@@ -9,20 +9,21 @@ searchEncoded = urllib.quote(search)
 
 #List of words that the user will have to guess
 word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff']
-answer = random.choice(word_list)
+danswer = random.choice(word_list)
 
 @app.route("/")
 @app.route("/home")
 @app.route("/home/")
 def home():
-    answer = random.choice(word_list)
+    danswer = random.choice(word_list)
     return render_template("home.html")
 
 @app.route("/quiz", methods=["GET","POST"])
 @app.route("/quiz/", methods=["GET","POST"])
 def quiz():
-    searchEncoded = urllib.quote(answer)
-    tag=searchEncoded
+    answer=danswer
+    searchEncoded2 = urllib.quote(answer)
+    tag=searchEncoded2
     rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
     jsonDATA = json.loads(rawData)
     searchResults = jsonDATA["responseData"]["results"]
@@ -37,10 +38,10 @@ def quiz():
     else:
         guess=request.form['guess']
         if guess==answer:
-            answer = random.choice(word_list)
+            danswer = random.choice(word_list)
             return render_template("correct.html")
         else:
-            answer = random.choice(word_list)
+            danswer = random.choice(word_list)
             return render_template("incorrect.html",answer=answer,guess=guess)
 
 @app.route("/browse", methods=["GET", "POST"])
