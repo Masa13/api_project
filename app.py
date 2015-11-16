@@ -3,8 +3,8 @@ from flask import Flask, render_template, request, redirect, session
 
 app = Flask(__name__)
 
-#search = 'banana'
-#searchEncoded = urllib.quote(search)
+search = 'banana'
+searchEncoded = urllib.quote(search)
 
 @app.route("/")
 @app.route("/home")
@@ -12,7 +12,7 @@ def home():
     return render_template("home.html")
 
 @app.route("/browse", methods=["GET", "POST"])
-@app.route("/browse/", methods=["GET", "POST"])
+#@app.route("/browse/<tag>", methods=["GET", "POST"])
 def browse():
     if request.method == "GET":
         return render_template("search.html")
@@ -21,6 +21,7 @@ def browse():
         keyword2=request.form['keyword2']
         search=keyword1+" "+keyword2
         searchEncoded = urllib.quote(search)
+        tag=searchEncoded
         rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
         jsonDATA = json.loads(rawData)
         searchResults = jsonDATA["responseData"]["results"]
