@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}
+<title>LAD | Play</title>
+{% endblock %}
+
+{% block row %}
+<div class="col-lg-12 text-center">
+	<h1>Browse for funny images!</h1>
+	<form method="POST">
+  <table>
+    <tr>
+      <td><b>Keyword One</b></td>
+      <td><b>Keyword Two</b></td>
+    </tr>
+    <tr>
+      <td><input type="text" name="keyword1"></td>
+      <td><input type="text" name="keyword2"></td>
+    </tr>
+  </table>
+  <input type="submit" name="button" value="Submit">
+  </form>
+</div>
+{% endblock %}
