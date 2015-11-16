@@ -10,7 +10,7 @@
 
 ##To-do list:
 Backend/Middleware
-  - Google images API (Masahero)
+  - Google images API (Shawn)
   - Quiz dictionary/database (Masahero)
   - Quiz (Masahero)
   - Image search using keywords (Masahero)
