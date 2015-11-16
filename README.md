@@ -1,4 +1,4 @@
-# api_project: Guess that image!
+# api_project: Guess da Word!!! :D
 
 ##Goal:
   * Create an image quiz game, where the user guesses the word based on the images shown.
