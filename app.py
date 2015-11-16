@@ -1,5 +1,5 @@
-import urllib, json, request, redirect
-from flask import Flask, render_template
+import urllib, json
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
