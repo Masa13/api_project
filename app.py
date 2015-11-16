@@ -12,8 +12,8 @@ def home():
     return render_template("home.html")
 
 @app.route("/browse", methods=["GET", "POST"])
-@app.route("/browse/<tag>", methods=["GET", "POST"])
-def browse(tag=searchEncoded):
+@app.route("/browse/", methods=["GET", "POST"])
+def browse():
     if request.method == "GET":
         return render_template("search.html")
     else:
