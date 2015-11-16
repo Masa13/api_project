@@ -16,6 +16,11 @@ word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','
 def home():
     return render_template("home.html")
 
+@app.route("/reset")
+def reset():
+    session['answer']=random.choice(word_list)
+    return redirect("/quiz")
+
 @app.route("/quiz", methods=["GET","POST"])
 @app.route("/quiz/", methods=["GET","POST"])
 def quiz(tag=searchEncoded):
@@ -39,13 +44,13 @@ def quiz(tag=searchEncoded):
         except:
             pass
     if request.method == "GET":
-        return render_template("quiz.html",urls=images)
+        return redirect("quiz.html",urls=images)
     else:
         guess=request.form['guess']
         if guess==answer:
-            return render_template("correct.html")
+            return redirect("correct.html")
         else:
-            return render_template("incorrect.html",answer=answer,guess=guess)
+            return redirect("incorrect.html",answer=answer,guess=guess)
 
 @app.route("/browse", methods=["GET", "POST"])
 @app.route("/browse/", methods=["GET", "POST"])
