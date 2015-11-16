@@ -3,8 +3,8 @@ from flask import Flask, render_template, request, redirect, session
 
 app = Flask(__name__)
 
-search = 'banana'
-searchEncoded = urllib.quote(search)
+#search = 'banana'
+#searchEncoded = urllib.quote(search)
 
 @app.route("/")
 @app.route("/home")
