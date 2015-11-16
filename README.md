@@ -17,6 +17,7 @@ Backend/Middleware
  
 UX/Front End
   - Adjust front end (Shawn)
+  - Done gimmick hehe (Shawn)
   - Aesthetics, CSS, bootstrap (Shawn)
   - Add to Home and About page (anyone)
 
