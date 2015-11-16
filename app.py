@@ -37,10 +37,10 @@ def quiz():
     else:
         guess=request.form['guess']
         if guess==answer:
-            searchEncoded = urllib.quote(search)
+            answer = random.choice(word_list)
             return render_template("correct.html")
         else:
-            searchEncoded = urllib.quote(search)
+            answer = random.choice(word_list)
             return render_template("incorrect.html",answer=answer,guess=guess)
 
 @app.route("/browse", methods=["GET", "POST"])
@@ -69,6 +69,6 @@ def browse(tag=searchEncoded):
 
 
 
-if (__name__ == "__main__"):
+if __name__ == "__main__":
    app.debug = True
    app.run(host="0.0.0.0", port=9000)
