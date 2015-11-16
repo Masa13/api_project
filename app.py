@@ -49,8 +49,10 @@ def quiz(tag=searchEncoded):
     else:
         guess=request.form['guess']
         if guess==answer:
+            session['answer']=random.choice(word_list)
             return render_template("correct.html")
         else:
+            session['answer']=random.choice(word_list)
             return render_template("incorrect.html",answer=answer,guess=guess)
 
 @app.route("/browse", methods=["GET", "POST"])
