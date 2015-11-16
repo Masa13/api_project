@@ -9,14 +9,13 @@
   - *[Masahero Masuda](https://github.com/Masa13)*
 
 ##To-do list:
-  #Backend/Middleware
+ Backend/Middleware
   - Google images API (Masahero)
   - Quiz dictionary/database (Masahero)
   - Quiz (Masahero)
   - Image search using keywords (Masahero)
-  - 
  
-  #UX/Front End
+ UX/Front End
   - Adjust front end (Shawn)
   - Aesthetics, CSS, bootstrap (Shawn)
   - Add to Home and About page (anyone)
