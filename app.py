@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, session
 
 app = Flask(__name__)
 
+#Default search values
 search = 'banana'
 searchEncoded = urllib.quote(search)
 
@@ -13,6 +14,7 @@ def home():
 
 @app.route("/quiz", methods=["GET","POST"])
 def quiz():
+    #List of words that the user will have to guess
     word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff']
     pos = random.randrange(0,10)
     search = word_list[pos]
@@ -31,7 +33,7 @@ def quiz():
         return render_template("quiz.html",urls=images)
     else:
         guess=request.form['guess']
-        if guess==word_list[pos]:
+        if guess==search:
             return render_template("correct.html")
         else:
             return render_template("wrong.html",answer=search)
