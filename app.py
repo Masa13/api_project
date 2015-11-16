@@ -28,7 +28,7 @@ def browse(tag=searchEncoded):
         for result in searchResults:
             try:
                 images.append(result['url'])
-             except:
+            except:
                 pass
         if button == "submit":
             return render_template("images.html", urls=images)
