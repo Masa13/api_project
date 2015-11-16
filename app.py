@@ -30,8 +30,7 @@ def quiz(tag=searchEncoded):
     #f=open("word.txt","r")
     #answer=f.read()
     #f.close()
-    if 'answer' not in session:
-        answer = random.choice(word_list)
+    answer=session['answer']
     searchEncoded = urllib.quote(answer)
     tag=searchEncoded
     rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
