@@ -44,6 +44,8 @@ def search(tag1=searchEncoded):
     return render_template("images.html",urls=images)
     if request.method == 'GET':
         return render_template("images.html", urls=images)
+    else
+        return render_template("home.html")
 
 if __name__ == "__main__":
     app.debug = True
