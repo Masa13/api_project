@@ -30,10 +30,7 @@ def browse(tag=searchEncoded):
                 images.append(result['url'])
             except:
                 pass
-        if button == "Cancel":
-            return render_template("search.html")
-        else:
-            return render_template("images.html", urls=images)
+        return render_template("images.html", urls=images)
             
         
 #@app.route("/search")
