@@ -37,8 +37,10 @@ def quiz():
     else:
         guess=request.form['guess']
         if guess==answer:
+            searchEncoded = urllib.quote(search)
             return render_template("correct.html")
         else:
+            searchEncoded = urllib.quote(search)
             return render_template("incorrect.html",answer=answer,guess=guess)
 
 @app.route("/browse", methods=["GET", "POST"])
