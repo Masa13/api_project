@@ -15,6 +15,7 @@ answer = random.choice(word_list)
 @app.route("/home")
 @app.route("/home/")
 def home():
+    answer = random.choice(word_list)
     return render_template("home.html")
 
 @app.route("/quiz", methods=["GET","POST"])
