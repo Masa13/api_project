@@ -9,7 +9,6 @@ searchEncoded = urllib.quote(search)
 
 #List of words that the user will have to guess
 word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff']
-pos = random.randrange(0,11)
 
 @app.route("/")
 @app.route("/home")
@@ -19,8 +18,8 @@ def home():
 
 @app.route("/quiz", methods=["GET","POST"])
 @app.route("/quiz/", methods=["GET","POST"])
-def quiz():
-    answer = word_list[pos]
+def quiz(tag=searchEncoded):
+    answer = random.choice(word_list)
     searchEncoded = urllib.quote(answer)
     tag=searchEncoded
     rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
