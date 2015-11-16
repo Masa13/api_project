@@ -17,8 +17,9 @@ def home():
 @app.route("/quiz/", methods=["GET","POST"])
 def quiz():
     #List of words that the user will have to guess
-    word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff','mom','dad','sister','brother','hard','soft','scream','nightmare','america','china','france','england','pokemon','ash','power','death','life','spikes','hairy','pain','exploration']
-    search = word_list[random.randrange(0,32)]
+    #word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff','mom','dad','sister','brother','hard','soft','scream','nightmare','america','china','france','england','pokemon','ash','power','death','life','spikes','hairy','pain','exploration']
+    word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff']
+    search = word_list[random.randrange(0,11)]
     searchEncoded = urllib.quote(search)
     tag=searchEncoded
     rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
