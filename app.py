@@ -10,7 +10,9 @@ searchEncoded = urllib.quote(search)
 @app.route("/home")
 def home():
     return render_template("home.html")
-    
+
+def browse():
+    return render_template("search.html")
 #@app.route("/search")
 #@app.route("/search/<tag>")
 #def t(tag=searchEncoded):
