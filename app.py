@@ -41,11 +41,11 @@ def search(tag1=searchEncoded):
             images.append(result['url'])
         except:
             pass
-    #if request.method == 'GET':
-    #    return render_template("images.html", urls=images)
-    #else:
-    #    return render_template("home.html")
+    if request.method == 'GET':
+        return render_template("images.html", urls=images)
+    else:
+        return render_template("home.html")
 
-if __name__ == "__main__":
+if (__name__ == "__main__"):
    app.debug = True
    app.run(host="0.0.0.0", port=9000)
