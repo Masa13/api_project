@@ -12,8 +12,8 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/t")
-@app.route("/t/<tag>")
+@app.route("/search")
+@app.route("/search/<tag>")
 def t(tag=searchEncoded):
     rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
     jsonDATA = json.loads(rawData)
@@ -26,11 +26,10 @@ def t(tag=searchEncoded):
             pass
     return render_template("images.html",urls=images)
 
-@app.route("/browse")
-@app.route("/browse/<tag>")
-def browse(tag="America"):
-    key="AIzaSyCMMiZuxl1R8QcMb0SZyvlzyCxNTJO0Zl4"
-    uri=""
+@app.route("/search", methods=["GET","POST"])
+def search():
+    if request.method == 'GET':
+        return render_template(")
 
 if __name__ == "__main__":
     app.debug = True
