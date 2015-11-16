@@ -16,7 +16,7 @@ def home():
 def quiz():
     #List of words that the user will have to guess
     word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff','mom','dad','sister','brother','hard','soft','scream','nightmare','america','china','france','england','pokemon','ash','power','death','life','spikes','hairy','pain','exploration']
-    pos = random.randrange(0,31)
+    pos = random.randrange(0,32)
     search = word_list[pos]
     searchEncoded = urllib.quote(search)
     tag=searchEncoded
