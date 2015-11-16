@@ -9,10 +9,12 @@ searchEncoded = urllib.quote(search)
 
 @app.route("/")
 @app.route("/home")
+@app.route("/home/")
 def home():
     return render_template("home.html")
 
 @app.route("/quiz", methods=["GET","POST"])
+@app.route("/quiz/", methods=["GET","POST"])
 def quiz():
     #List of words that the user will have to guess
     word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff','mom','dad','sister','brother','hard','soft','scream','nightmare','america','china','france','england','pokemon','ash','power','death','life','spikes','hairy','pain','exploration']
@@ -39,6 +41,7 @@ def quiz():
             return render_template("incorrect.html",answer=search)
 
 @app.route("/browse", methods=["GET", "POST"])
+@app.route("/browse/", methods=["GET", "POST"])
 @app.route("/browse/<tag>", methods=["GET", "POST"])
 def browse(tag=searchEncoded):
     if request.method == "GET":
