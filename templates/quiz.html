@@ -9,7 +9,11 @@
 <div class="col-lg-12 text-center">
 	<h1>Guess the word!!!</h1>
 	<p class="lead">You only have one chance, so think it through! </p>
-	<br>
+	<br><br>
+	<form method="POST">
+  	<input type="text" name="guess"></td>
+  	<input type="submit" name="button" value="Submit">
+  </form>
 	{% for url in urls %}
 		<img src = "{{ url }}" width = 720px />
 		<br>
