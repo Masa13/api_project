@@ -31,7 +31,7 @@ def browse():
                 images.append(result['url'])
             except:
                 pass
-        return render_template("images.html", urls=images)
+        return render_template("images.html", urls=images, keyword1=keyword1, keyword2=keyword2)
             
         
 #@app.route("/search")
