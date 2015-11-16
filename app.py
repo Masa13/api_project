@@ -35,7 +35,7 @@ def quiz():
         return render_template("quiz.html",urls=images)
     else:
         guess=request.form['guess']
-        if guess==search:
+        if guess==answer:
             return render_template("correct.html")
         else:
             return render_template("incorrect.html",answer=answer,guess=guess)
