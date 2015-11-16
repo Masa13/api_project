@@ -12,8 +12,8 @@ def home():
     return render_template("home.html")
 
 @app.route("/browse", methods=["GET", "POST"])
-#@app.route("/browse/<tag>", methods=["GET", "POST"])
-def browse():
+@app.route("/browse/<tag>", methods=["GET", "POST"])
+def browse(tag=searchEncoded):
     if request.method == "GET":
         return render_template("search.html")
     else:
@@ -33,20 +33,7 @@ def browse():
                 pass
         return render_template("images.html", urls=images, keyword1=keyword1, keyword2=keyword2)
             
-        
-#@app.route("/search")
-#@app.route("/search/<tag>")
-#def t(tag=searchEncoded):
-#    rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
-#    jsonDATA = json.loads(rawData)
-#    searchResults = jsonDATA["responseData"]["results"]
-#    images = []
-#    for result in searchResults:
-#        try:
-#            images.append(result['url'])
-#        except:
-#            pass
-#    return render_template("images.html",urls=images)
+
 
 
 if (__name__ == "__main__"):
