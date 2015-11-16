@@ -36,7 +36,7 @@ def quiz():
         if guess==search:
             return render_template("correct.html")
         else:
-            return render_template("wrong.html",answer=search)
+            return render_template("incorrect.html",answer=search)
 
 @app.route("/browse", methods=["GET", "POST"])
 @app.route("/browse/<tag>", methods=["GET", "POST"])
