@@ -22,6 +22,7 @@ def home():
 @app.route("/quiz", methods=["GET","POST"])
 @app.route("/quiz/", methods=["GET","POST"])
 def quiz():
+    answer = random.choice(word_list)
     searchEncoded = urllib.quote(answer)
     tag=searchEncoded
     rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
