@@ -7,6 +7,10 @@ app = Flask(__name__)
 search = 'banana'
 searchEncoded = urllib.quote(search)
 
+#List of words that the user will have to guess
+word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff']
+answer = random.choice(word_list)
+
 @app.route("/")
 @app.route("/home")
 @app.route("/home/")
@@ -16,12 +20,7 @@ def home():
 @app.route("/quiz", methods=["GET","POST"])
 @app.route("/quiz/", methods=["GET","POST"])
 def quiz():
-    #List of words that the user will have to guess
-    word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff']
-    #search = random.choice(word_list)
-    pos=random.randrange(0,11)
-    search=word_list[pos]
-    searchEncoded = urllib.quote(search)
+    searchEncoded = urllib.quote(answer)
     tag=searchEncoded
     rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
     jsonDATA = json.loads(rawData)
@@ -39,7 +38,7 @@ def quiz():
         if guess==search:
             return render_template("correct.html")
         else:
-            return render_template("incorrect.html",answer=search,guess=guess)
+            return render_template("incorrect.html",answer=answer,guess=guess)
 
 @app.route("/browse", methods=["GET", "POST"])
 @app.route("/browse/", methods=["GET", "POST"])
