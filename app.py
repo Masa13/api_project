@@ -10,8 +10,7 @@ searchEncoded = urllib.quote(search)
 @app.route("/home")
 def home():
     return render_template("home.html")
-
-
+    
 #@app.route("/search")
 #@app.route("/search/<tag>")
 #def t(tag=searchEncoded):
@@ -42,10 +41,10 @@ def search(tag1=searchEncoded):
             images.append(result['url'])
         except:
             pass
-    if request.method == 'GET':
-        return render_template("images.html", urls=images)
-    else:
-        return render_template("home.html")
+    #if request.method == 'GET':
+    #    return render_template("images.html", urls=images)
+    #else:
+    #    return render_template("home.html")
 
 if __name__ == "__main__":
    app.debug = True
