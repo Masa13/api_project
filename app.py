@@ -3,8 +3,8 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-#search = 'banana'
-#searchEncoded = urllib.quote(search)
+search = 'banana'
+searchEncoded = urllib.quote(search)
 
 @app.route("/")
 @app.route("/home")
@@ -34,6 +34,7 @@ def search(tag1=searchEncoded):
     search=keyword1+" "+keyword2
     searchEncoded = urllib.quote(search)
     rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
+    jsonDATA = json.loads(rawData)
     searchResults = jsonDATA["responseData"]["results"]
     images = []
     for result in searchResults:
@@ -48,4 +49,4 @@ def search(tag1=searchEncoded):
 
 if __name__ == "__main__":
    app.debug = True
-   app.run(host="0.0.0.0", port=8000)
+   app.run(host="0.0.0.0", port=9000)
