@@ -31,7 +31,7 @@ def quiz():
         except:
             pass
     if request.method == "GET":
-        return render_template("quiz.html",urls=images)
+        return render_template("quiz.html",urls=images,result=search)
     else:
         guess=request.form['guess']
         if guess==search:
