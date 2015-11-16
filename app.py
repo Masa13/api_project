@@ -18,7 +18,7 @@ def home():
 def quiz():
     #List of words that the user will have to guess
     word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff']
-    pos = random.randrange(0,10)
+    pos = 0 #random.randrange(0,11)
     search = word_list[pos]
     searchEncoded = urllib.quote(search)
     tag=searchEncoded
@@ -38,7 +38,7 @@ def quiz():
         if guess==search:
             return render_template("correct.html")
         else:
-            return render_template("incorrect.html",answer=search)
+            return render_template("incorrect.html",answer=search,guess=guess)
 
 @app.route("/browse", methods=["GET", "POST"])
 @app.route("/browse/", methods=["GET", "POST"])
