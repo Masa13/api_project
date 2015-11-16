@@ -14,6 +14,7 @@
   - Quiz dictionary/database (Masahero)
   - Quiz (Masahero)
   - Image search using keywords (Masahero)
+  - 
   UX/Front End
   - Adjust front end (Shawn)
   - Aesthetics, CSS, bootstrap (Shawn)
