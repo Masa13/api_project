@@ -19,12 +19,14 @@ def home():
 @app.route("/quiz", methods=["GET","POST"])
 @app.route("/quiz/", methods=["GET","POST"])
 def quiz(tag=searchEncoded):
-    file = open("word.txt", "w")
-    file.write(random.choice(word_list))
-    file.close()
-    f=open("word.txt","r")
-    answer=f.read()
-    f.close()
+    #file = open("word.txt", "w")
+    #file.write(random.choice(word_list))
+    #file.close()
+    #f=open("word.txt","r")
+    #answer=f.read()
+    #f.close()
+    if 'answer' not in session:
+        answer = random.choice(word_list)
     searchEncoded = urllib.quote(answer)
     tag=searchEncoded
     rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
