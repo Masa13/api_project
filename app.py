@@ -8,7 +8,7 @@ search = 'banana'
 searchEncoded = urllib.quote(search)
 
 #List of words that the user will have to guess
-word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff']
+word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff','bad','good','round','curved','math','science','apple','rich','poor','china','food','pokemon','scary','stars','war','weapon','gun','france','bomb','terror','japan','anime','cartoon','manga','flower','people','race','nationality','status','sound','physics','famous','money']
 
 @app.route("/")
 @app.route("/home")
@@ -81,5 +81,5 @@ def browse(tag=searchEncoded):
 
 if __name__ == "__main__":
    app.debug = True
-   app.secret_key = "Don't store this on github"
+   app.secret_key = "Secret Stuff xoxo"
    app.run(host="0.0.0.0", port=9000)
