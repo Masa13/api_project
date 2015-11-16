@@ -18,7 +18,7 @@ def home():
 def quiz():
     #List of words that the user will have to guess
     word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff']
-    search = random.randchoice(word_list)
+    search = random.choice(word_list)
     searchEncoded = urllib.quote(search)
     tag=searchEncoded
     rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
