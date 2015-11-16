@@ -41,7 +41,6 @@ def search(tag1=searchEncoded):
             images.append(result['url'])
         except:
             pass
-    return render_template("images.html",urls=images)
     if request.method == 'GET':
         return render_template("images.html", urls=images)
     else:
