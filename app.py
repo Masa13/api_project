@@ -19,7 +19,12 @@ def home():
 @app.route("/quiz", methods=["GET","POST"])
 @app.route("/quiz/", methods=["GET","POST"])
 def quiz(tag=searchEncoded):
-    answer = random.choice(word_list)
+    file = open("word.txt", "w")
+    file.write(random.choice(word_list))
+    file.close()
+    f=open("word.txt","r")
+    answer=f.read()
+    f.close()
     searchEncoded = urllib.quote(answer)
     tag=searchEncoded
     rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
@@ -36,10 +41,8 @@ def quiz(tag=searchEncoded):
     else:
         guess=request.form['guess']
         if guess==answer:
-            pos = random.randrange(0,11)
             return render_template("correct.html")
         else:
-            pos = random.randrange(0,11)
             return render_template("incorrect.html",answer=answer,guess=guess)
 
 @app.route("/browse", methods=["GET", "POST"])
