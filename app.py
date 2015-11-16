@@ -45,13 +45,13 @@ def quiz(tag=searchEncoded):
         except:
             pass
     if request.method == "GET":
-        return redirect("quiz.html",urls=images)
+        return render_template("quiz.html",urls=images)
     else:
         guess=request.form['guess']
         if guess==answer:
-            return redirect("correct.html")
+            return render_template("correct.html")
         else:
-            return redirect("incorrect.html",answer=answer,guess=guess)
+            return render_template("incorrect.html",answer=answer,guess=guess)
 
 @app.route("/browse", methods=["GET", "POST"])
 @app.route("/browse/", methods=["GET", "POST"])
