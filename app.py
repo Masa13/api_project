@@ -26,10 +26,10 @@ def browse(tag=searchEncoded):
         searchResults = jsonDATA["responseData"]["results"]
         images = []
         for result in searchResults:
-        try:
-            images.append(result['url'])
-        except:
-            pass
+            try:
+                images.append(result['url'])
+             except:
+                pass
         if button == "submit":
             return render_template("images.html", urls=images)
             
