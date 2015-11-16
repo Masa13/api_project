@@ -1,16 +1,15 @@
-# api_project: LAD (little alchemy demo)
+# api_project: Guess that image!
 
 ##Goal:
-  * Create a "little alchemy" demo that requires the user to guess what object is formed by combining two other objects. 
+  * Create an image quiz game, where the user guesses the word based on the images shown.
 
 ##Group members:
   - *[Shawn Li](https://github.com/TyranitarShawn)*
   - *[Masahero Masuda](https://github.com/Masa13)*
 
 ##To-do list:
-  - Add Tumblr API (Masahero)
-  - Add Alchemy dictionary (Masahero)
-  - Adjust middle to get requests and process them (Shawn can't do until above two are completed)
+  - Add Google images API (Masahero)
+  - Add Quiz dictionary/database (Masahero)
   - Adjust front end
   - Add to Home and About page (anyone)
 
