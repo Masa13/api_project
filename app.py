@@ -1,4 +1,4 @@
-import urllib, json
+import urllib, json, random
 from flask import Flask, render_template, request, redirect, session
 
 app = Flask(__name__)
@@ -10,6 +10,31 @@ searchEncoded = urllib.quote(search)
 @app.route("/home")
 def home():
     return render_template("home.html")
+
+@app.route("/quiz", methods=["GET","POST"])
+def quiz():
+    word_list=['fire','water','earth','galaxy','planet','wise','small','sad','wow','god','stuff']
+    pos = random.randrange(0,10)
+    search = word_list[pos]
+    searchEncoded = urllib.quote(search)
+    tag=searchEncoded
+    rawData = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+tag).read()
+    jsonDATA = json.loads(rawData)
+    searchResults = jsonDATA["responseData"]["results"]
+    images = []
+    for result in searchResults:
+        try:
+            images.append(result['url'])
+        except:
+            pass
+    if request.method == "GET":
+        return render_template("quiz.html",urls=images)
+    else:
+        guess=request.form['guess']
+        if guess==word_list[pos]:
+            return render_template("correct.html")
+        else:
+            return render_template("wrong.html",answer=search)
 
 @app.route("/browse", methods=["GET", "POST"])
 @app.route("/browse/<tag>", methods=["GET", "POST"])
