@@ -9,11 +9,14 @@
   - *[Masahero Masuda](https://github.com/Masa13)*
 
 ##To-do list:
-  - Add Google images API (Masahero)
-  - Add Quiz dictionary/database (Masahero)
-  - Add Quiz (Masahero)
+  Backend/Middleware
+  - Google images API (Masahero)
+  - Quiz dictionary/database (Masahero)
+  - Quiz (Masahero)
+  - Image search using keywords (Masahero)
+  UX/Front End
   - Adjust front end (Shawn)
-  - Aesthetics (Shawn)
+  - Aesthetics, CSS, bootstrap (Shawn)
   - Add to Home and About page (anyone)
 
 ##Odd bugs:
